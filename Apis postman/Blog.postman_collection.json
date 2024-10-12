@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "465d65dd-5f60-4cf8-90ec-795b1073c1c0",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33599772"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"marwan magdy\",\r\n    \"email\":\"manomano20031@gmail.com\",\r\n    \"password\":\"123\",\r\n    \"confirmPassword\":\"123\",\r\n    \"role\":\"user\"}  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"marwanmagdy826@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbm9tYW5vMjAwMzE1QGdtYWlsLmNvbSIsImlkIjoiNjcwOTY2NDUwYjYzMTdjNzBiNWMzMDA1IiwiaWF0IjoxNzI4NzQ4MzM3fQ.sQz_VVW-iINTY65B7HS3AxkYtI36eoYTJePznBBZUOM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "iam user",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "user added post ",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Downloads/wallpaperflare.com_wallpaper (18).jpg"
+								},
+								{
+									"key": "user",
+									"value": "6706ce0907adcfa5e391e213",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/post/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcndhbm1hZ2R5ODI2QGdtYWlsLmNvbSIsImlkIjoiNjcwNmNlMDkwN2FkY2ZhNWUzOTFlMjEzIiwiaWF0IjoxNzI4NTgxMjM0fQ.jJhF5fpOfpvy3HFCar9JAsV6xfB7d_Lt49fP6Tb2PpM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "web dev update",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "hellllo worlllllllllllld",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Marwan  magdy/OneDrive/Pictures/images.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/post/update/670814cc4af466e73fb099d9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"update",
+								"670814cc4af466e73fb099d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcndhbm1hZ2R5ODI2QGdtYWlsLmNvbSIsImlkIjoiNjcwNmNlMDkwN2FkY2ZhNWUzOTFlMjEzIiwiaWF0IjoxNzI4NzQ5MTU2fQ.K1Dx8EQDr-4XGM7KxE19QEkRwmHVtdy_HR8OMqk13P4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/post/delete/670a9baf48c17c95f85443f9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"delete",
+								"670a9baf48c17c95f85443f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcndhbm1hZ2R5ODI2QGdtYWlsLmNvbSIsImlkIjoiNjcwNmNlMDkwN2FkY2ZhNWUzOTFlMjEzIiwiaWF0IjoxNzI4NjcwNjMzfQ.4y2nXL0JPnWTtEIf0PR8tzwI9EHPAA8kUxedSAjMFYc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/post/userPosts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"userPosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get post using id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/post/670a9b6681606784e1a261f3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"670a9b6681606784e1a261f3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "interactions",
+			"item": [
+				{
+					"name": "add react",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbm9tYW5vMjAwMzE1QGdtYWlsLmNvbSIsImlkIjoiNjcwOTY2NDUwYjYzMTdjNzBiNWMzMDA1IiwiaWF0IjoxNzI4NjY5NDMxfQ.5qst1DAB0ACFztCggXgXYFXHHnUfUtODbbdTGGcjpyo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"likes\":true,\r\n    \"comments\":\"good job broooo2222\",\r\n    \"postId\":\"670967a40b6317c70b5c3016\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/interaction/create-React",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interaction",
+								"create-React"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update react",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbm9tYW5vMjAwMzE1QGdtYWlsLmNvbSIsImlkIjoiNjcwOTY2NDUwYjYzMTdjNzBiNWMzMDA1IiwiaWF0IjoxNzI4NjY5NDMxfQ.5qst1DAB0ACFztCggXgXYFXHHnUfUtODbbdTGGcjpyo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comments\":\"good job broooo2222updated\",\r\n    \"postId\":\"670967a40b6317c70b5c3016\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/interaction/update-React/67096bd3ad4c9a454c8e8845",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interaction",
+								"update-React",
+								"67096bd3ad4c9a454c8e8845"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete react",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbm9tYW5vMjAwMzE1QGdtYWlsLmNvbSIsImlkIjoiNjcwOTY2NDUwYjYzMTdjNzBiNWMzMDA1IiwiaWF0IjoxNzI4NjY5NDMxfQ.5qst1DAB0ACFztCggXgXYFXHHnUfUtODbbdTGGcjpyo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/interaction/delete-React/67097952b23af985f4a97ef7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interaction",
+								"delete-React",
+								"67097952b23af985f4a97ef7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
